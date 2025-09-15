@@ -1,0 +1,361 @@
+/* Markdown Display Tester - Enhanced Styling with Darker Text */
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f9fafb;
+    color: #1f2937; /* Darker base text color */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #111827; /* Very dark for main heading */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header p {
+    color: #4b5563; /* Darker secondary text */
+    font-size: 0.9rem;
+}
+
+/* File Controls */
+.file-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.file-label {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.file-label:hover {
+    background: #2563eb;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-name {
+    color: #4b5563; /* Darker file name text */
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Content Display */
+.content-display {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 500px;
+}
+
+/* Enhanced Document Content Styling */
+.document-content {
+    padding: 25px;
+    line-height: 1.6;
+    color: #1f2937; /* Much darker main text */
+    background: white;
+}
+
+.document-content h1,
+.document-content h2,
+.document-content h3,
+.document-content h4,
+.document-content h5,
+.document-content h6 {
+    color: #111827; /* Very dark headers */
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.document-content h1 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 8px;
+}
+
+.document-content h2 {
+    font-size: 1.3rem;
+    color: #1e40af; /* Darker blue for h2 */
+}
+
+.document-content h3 {
+    font-size: 1.1rem;
+}
+
+.document-content p {
+    margin-bottom: 16px;
+    color: #1f2937; /* Dark paragraph text */
+}
+
+.document-content ul,
+.document-content ol {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.document-content li {
+    margin-bottom: 8px;
+    color: #1f2937; /* Dark list item text */
+}
+
+.document-content code {
+    background: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.85em;
+    color: #1f2937; /* Dark code text */
+    border: 1px solid #e5e7eb;
+}
+
+.document-content pre {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.document-content pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    color: #1f2937; /* Dark pre code text */
+}
+
+.document-content blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 16px;
+    margin: 16px 0;
+    color: #374151; /* Darker blockquote text */
+    font-style: italic;
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 0 4px 4px 0;
+}
+
+.document-content strong {
+    font-weight: 600;
+    color: #111827; /* Very dark bold text */
+}
+
+.document-content em {
+    font-style: italic;
+    color: #1f2937; /* Dark italic text */
+}
+
+.document-content hr {
+    border: none;
+    border-top: 1px solid #d1d5db;
+    margin: 24px 0;
+}
+
+.document-content a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.document-content a:hover {
+    color: #1d4ed8;
+}
+
+.document-content del {
+    color: #6b7280;
+    text-decoration: line-through;
+}
+
+.document-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 16px 0;
+}
+
+/* Enhanced PDF Placeholder Styling */
+.pdf-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    text-align: center;
+    color: #4b5563; /* Darker placeholder text */
+    padding: 40px;
+    background: white;
+    transition: background-color 0.2s ease;
+}
+
+.pdf-placeholder.drag-over {
+    background: #f0f9ff;
+    border: 2px dashed #3b82f6;
+}
+
+.pdf-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.7;
+    color: #6b7280; /* Darker icon */
+}
+
+.pdf-placeholder h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827; /* Dark placeholder heading */
+}
+
+.pdf-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #4b5563; /* Darker placeholder text */
+}
+
+.pdf-placeholder ol {
+    color: #374151; /* Darker list text */
+}
+
+.pdf-placeholder code {
+    background: #f3f4f6;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    color: #1f2937; /* Dark code in placeholder */
+}
+
+/* Font Awesome Icons (enhanced) */
+.fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.fas.fa-file-text::before {
+    content: '📄';
+}
+
+.fas.fa-exclamation-triangle::before {
+    content: '⚠️';
+}
+
+.fas.fa-info-circle::before {
+    content: 'ℹ️';
+}
+
+.fas.fa-spinner::before {
+    content: '⟳';
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Loading and Error States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.error {
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+}
+
+/* Enhanced Button Styling */
+button {
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .file-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .document-content {
+        padding: 20px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .pdf-placeholder {
+        height: 300px;
+        padding: 30px 15px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .file-controls,
+    header {
+        display: none;
+    }
+    
+    .content-display {
+        box-shadow: none;
+        border: none;
+    }
+    
+    .document-content {
+        padding: 0;
+    }
+}
