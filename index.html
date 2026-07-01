@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediXtract Markdown Display Tester</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Notes Studio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%236366f1%22/><text x=%2250%22 y=%2266%22 font-size=%2246%22 font-family=%22Arial,sans-serif%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>MD</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>MediXtract Markdown Display Tester</h1>
-            <p>Test how critical fields markdown appears in the current MediXtract application</p>
-        </header>
-
-        <div class="file-controls">
-            <label for="fileInput" class="file-label">
-                Select Markdown File
-            </label>
-            <input type="file" id="fileInput" accept=".txt,.md" class="file-input">
-            <span id="fileName" class="file-name">No file selected</span>
+    <header id="app-header">
+        <div class="brand">
+            <span class="brand-mark">MD</span>
+            <span class="brand-name">Notes Studio</span>
         </div>
+        <p class="tagline">Paste or upload markdown &rarr; get a searchable notes viewer and a PDF, no install required.</p>
+    </header>
 
-        <div class="content-display">
-            <div class="document-content" id="renderedContent">
-                <div class="pdf-placeholder">
-                    <i class="fas fa-file-text"></i>
-                    <h4>No File Selected</h4>
-                    <p>Select a markdown file to see how it's rendered.</p>
-                </div>
+    <main id="app-body">
+        <section id="editor-panel">
+            <label class="field-label" for="doc-title">Title</label>
+            <input type="text" id="doc-title" placeholder="Untitled Notes" autocomplete="off">
+
+            <div id="dropzone">
+                <span>Drop a .md file here, or click to browse</span>
+                <input type="file" id="file-input" accept=".md,.markdown,.txt">
             </div>
-        </div>
-    </div>
 
-    <script src="markdown-parser.js"></script>
-    <script src="app.js"></script>
+            <label class="field-label" for="md-input">Markdown</label>
+            <textarea id="md-input" placeholder="# Paste your markdown here..." spellcheck="false"></textarea>
+
+            <div id="toolbar">
+                <button id="download-viewer" class="btn btn-primary">Download Viewer (.html)</button>
+                <button id="download-pdf" class="btn btn-secondary">Download PDF</button>
+            </div>
+            <p id="status"></p>
+        </section>
+
+        <section id="preview-panel">
+            <div class="panel-label">Live preview</div>
+            <iframe id="preview-frame" title="Notes viewer preview"></iframe>
+        </section>
+    </main>
+
+    <script src="assets/viewer-template.js"></script>
+    <script src="assets/print-template.js"></script>
+    <script src="assets/app.js"></script>
 </body>
 </html>
