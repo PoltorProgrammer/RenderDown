@@ -1,5 +1,7 @@
 # MD Notes Studio
 
+[![Deploy](https://img.shields.io/badge/🔗%20See-Live%20demo-blue)](https://poltorprogrammer.github.io/RenderDown/)
+
 A single static web page that turns Markdown into:
 
 - **A searchable notes viewer** — a self-contained, dark-themed `.html` file with a
